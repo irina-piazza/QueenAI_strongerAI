@@ -3,3 +3,4 @@ fitness_poses_csvs_out/*
 /fitness_poses_images_in/*
 fitness_poses_images_out.zip
 fitness_poses_images_out.tar.xz
+.ipynb_checkpoints
