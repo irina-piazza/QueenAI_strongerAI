@@ -8,4 +8,7 @@ __pycache__
 .git
 .ipynb_checkpoints
 *.ipynb
+classify_video/fitness_poses_csvs_out/
+classify_video/fitness_poses_images_in/
+classify/video/fitness_poses_images_out/
 
