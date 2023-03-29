@@ -18,6 +18,11 @@ from classApp.class_poseClassificationVisualizer import PoseClassificationVisual
 from classApp.class_bootstrapHelper import BootstrapHelper
 from classApp.class_bootstrapHelper import show_image
 
+import sys
+
+arg_list = sys.argv
+script = arg_list[0]
+exercise = arg_list[1]
 #-----------------------------------------------------
 
 def initialize(class_name, video_n_frames, pose_samples_folder):
@@ -109,7 +114,7 @@ def generateVideo(out_video_path, video_cap, video_n_frames, video_fps, video_wi
 
                 # Still add empty classification to the filter to maintaing correct
                 # smoothing for future frames.
-                pose_classification_filtered = pose_classification_filter(dict())
+                pose_ctype_of_exercizelassification_filtered = pose_classification_filter(dict())
                 pose_classification_filtered = None
 
                 # Don't update the counter presuming that person is 'frozen'. Just
@@ -131,9 +136,8 @@ def generateVideo(out_video_path, video_cap, video_n_frames, video_fps, video_wi
             #     show_image(output_frame)
 
             frame_idx += 1
-            pbar.update()
-
-    # Close output video.
+            pbar.update()    # Close output video.
+    
     out_video.release()
 
     # Release MediaPipe resources.
@@ -149,8 +153,9 @@ def useWebcam():
 
 
 def main():
-    exercise='squats'
-
+    #exercise=type_of_exercize
+    print(script, exercise)
+    print(arg_list)
     # Specify your video name and target pose class to count the repetitions.
     video_path = './data/'+exercise+'.mp4'
     class_name = 'pushups_down'
