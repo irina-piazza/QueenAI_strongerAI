@@ -7,7 +7,6 @@ folder_path_in = './fitness_poses_images_out/out/'  # Replace with the path to t
 # List to store file names
 def return_list_image(dir_path):
     file_names = []
-
     # Iterate over files in directory
     for file in os.listdir(dir_path):
         # Check if file is a regular file (not a directory)
