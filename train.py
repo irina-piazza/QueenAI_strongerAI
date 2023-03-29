@@ -1,7 +1,7 @@
 import csv
 import os
 import numpy as np
-
+import sys
 from classApp.class_bootstrapHelper import BootstrapHelper
 from classApp.class_bootstrapHelper import show_image
 from classApp.class_poseclassifier import PoseClassifier
@@ -17,13 +17,16 @@ pose_samples_csv_path = 'fitness_poses_csvs_out.csv'
 file_extension = 'csv'
 file_separator = ','
 
+arg_list = sys.argv
+script = arg_list[0]
+exercise = arg_list[1]
 
 def trainmodel(bootstrap_images_in_folder, bootstrap_images_out_folder, bootstrap_csvs_out_folder, exercise):
     # Initialize helper.
     bootstrap_helper = BootstrapHelper(
-        images_in_folder=bootstrap_images_in_folder+'/'+exercise,
-        images_out_folder=bootstrap_images_out_folder+'/'+exercise,
-        csvs_out_folder=bootstrap_csvs_out_folder+'/'+exercise,
+        images_in_folder=bootstrap_images_in_folder,
+        images_out_folder=bootstrap_images_out_folder,
+        csvs_out_folder=bootstrap_csvs_out_folder,
     )
 
     # Check how many pose classes and images for them are available.
