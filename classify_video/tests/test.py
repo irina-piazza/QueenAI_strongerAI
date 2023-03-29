@@ -1,5 +1,6 @@
 import os
 
+
 folder_path_out = './fitness_poses_images_out/in/'  # Replace with the path to the first subfolder
 folder_path_in = './fitness_poses_images_out/out/'  # Replace with the path to the second subfolder
 
