@@ -2,8 +2,8 @@ import csv
 import numpy as np
 import os
 
-from classApp.class_poseSample import PoseSample
-from classApp.class_poseSampleOutlier import PoseSampleOutlier
+from classify_video.class_poseSample import PoseSample
+from classify_video.class_poseSampleOutlier import PoseSampleOutlier
 
 class PoseClassifier(object):
   """Classifies pose landmarks."""

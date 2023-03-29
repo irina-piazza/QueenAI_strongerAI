@@ -2,10 +2,10 @@ import csv
 import os
 import numpy as np
 import sys
-from classApp.class_bootstrapHelper import BootstrapHelper
-from classApp.class_bootstrapHelper import show_image
-from classApp.class_poseclassifier import PoseClassifier
-from classApp.class_fullBodyPoseEmbedder import FullBodyPoseEmbedder
+from classify_video.class_bootstrapHelper import BootstrapHelper
+from classify_video.class_bootstrapHelper import show_image
+from classify_video.class_poseclassifier import PoseClassifier
+from classify_video.class_fullBodyPoseEmbedder import FullBodyPoseEmbedder
 
 
 bootstrap_images_in_folder = 'fitness_poses_images_in'

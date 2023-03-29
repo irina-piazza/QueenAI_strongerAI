@@ -8,15 +8,15 @@ from mediapipe.python.solutions import drawing_utils as mp_drawing
 
 from matplotlib import pyplot as plt
 
-from classApp.class_fullBodyPoseEmbedder import FullBodyPoseEmbedder
-from classApp.class_poseSample import PoseSample
-from classApp.class_poseSampleOutlier import PoseSampleOutlier
-from classApp.class_poseclassifier import PoseClassifier
-from classApp.class_EMADictSmoothing import EMADictSmoothing
-from classApp.class_repetitioncounter import RepetitionCounter
-from classApp.class_poseClassificationVisualizer import PoseClassificationVisualizer
-from classApp.class_bootstrapHelper import BootstrapHelper
-from classApp.class_bootstrapHelper import show_image
+from classify_video.class_fullBodyPoseEmbedder import FullBodyPoseEmbedder
+from classify_video.class_poseSample import PoseSample
+from classify_video.class_poseSampleOutlier import PoseSampleOutlier
+from classify_video.class_poseclassifier import PoseClassifier
+from classify_video.class_EMADictSmoothing import EMADictSmoothing
+from classify_video.class_repetitioncounter import RepetitionCounter
+from classify_video.class_poseClassificationVisualizer import PoseClassificationVisualizer
+from classify_video.class_bootstrapHelper import BootstrapHelper
+from classify_video.class_bootstrapHelper import show_image
 
 import sys
 
@@ -157,9 +157,9 @@ def main():
     print(script, exercise)
     print(arg_list)
     # Specify your video name and target pose class to count the repetitions.
-    video_path = './data/'+exercise+'.mp4'
+    video_path = '/tmp/data/'+exercise+".mp4"
     class_name = 'pushups_down'
-    out_video_path = './data/'+exercise+'-sample-out.mp4'
+    out_video_path = '/tmp/data/'+exercise+'-sample-out.mp4'
     video_cap = cv2.VideoCapture(video_path)
     # Get some video parameters to generate output video with classificaiton.
     video_n_frames = video_cap.get(cv2.CAP_PROP_FRAME_COUNT)
@@ -174,8 +174,8 @@ def main():
 
     # Folder with pose class CSVs. That should be the same folder you using while
     # building classifier to output CSVs.
-    pose_samples_folder = 'fitness_poses_csvs_out/' + exercise
-    
+   # pose_samples_folder = 'fitness_poses_csvs_out/' 
+    pose_samples_folder = "/tmp/fitness_poses_csvs_out/"
     pose_tracker, pose_classifier, pose_classification_filter, repetition_counter, pose_classification_visualizer = initialize(class_name, video_n_frames, pose_samples_folder)
     generateVideo(out_video_path, video_cap, video_n_frames, video_fps, video_width, video_height, pose_tracker, pose_classifier, pose_classification_filter, repetition_counter, pose_classification_visualizer)
 
